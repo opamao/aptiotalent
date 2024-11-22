@@ -1,9 +1,13 @@
 import 'package:aptiotalent/src/themes/themes/themes.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../../constants/constants.dart';
+import '../../../widgets/widgets.dart';
 import '../../auths/login/login.dart';
+import '../../menus/menus.dart';
 
 class IntroPage extends StatefulWidget {
   const IntroPage({super.key});
@@ -56,6 +60,59 @@ class _IntroPageState extends State<IntroPage> {
           child: Column(
             children: [
               Expanded(
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    // Circular background
+                    Container(
+                      width: 350,
+                      height: 350,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.blue.withOpacity(0.1),
+                      ),
+                    ),
+                    Positioned(
+                      child: CircleAvatar(
+                        radius: 120,
+                      ),
+                    ),
+                    Positioned(
+                      child: CircleAvatar(
+                        radius: 80,
+                        backgroundColor: appColor.withOpacity(.2),
+                      ),
+                    ),
+                    // Tags
+                    Positioned(
+                      top: 50,
+                      left: 30,
+                      child: _buildTag("#Designer", Colors.purple),
+                    ),
+                    Positioned(
+                      bottom: 120,
+                      right: 30,
+                      child: _buildTag("#Manager", appColor),
+                    ),
+                    Positioned(
+                      top: 130,
+                      left: 70,
+                      child: _buildTag("#Consultance", Colors.blue),
+                    ),
+                    Positioned(
+                      bottom: 80,
+                      left: 20,
+                      child: _buildTag("#Developer", Colors.orange),
+                    ),
+                    Positioned(
+                      top: 100,
+                      right: 40,
+                      child: _buildTag("#Finance", Colors.green),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
                 child: PageView.builder(
                   itemCount: demoData.length,
                   controller: _pageController,
@@ -65,14 +122,33 @@ class _IntroPageState extends State<IntroPage> {
                     });
                   },
                   itemBuilder: (context, index) => TestScreenContent(
-                    image: demoData[index].image,
                     titre: demoData[index].titre,
                     subTitre: demoData[index].subTitre,
                   ),
                 ),
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  FloatingActionButton.small(
+                    heroTag: 'avant',
+                    shape: CircleBorder(),
+                    onPressed: () {
+                      if (_pageIndex == 0) {
+                        return;
+                      }
+                      _pageController.previousPage(
+                        curve: Curves.ease,
+                        duration: const Duration(milliseconds: 300),
+                      );
+                    },
+                    child: Icon(
+                      Icons.navigate_before_outlined,
+                      color: appColor,
+                      size: 20.sp,
+                    ),
+                  ),
+                  Gap(5.w),
                   ...List.generate(
                     demoData.length,
                     (index) => Padding(
@@ -80,16 +156,12 @@ class _IntroPageState extends State<IntroPage> {
                       child: DotIndicator(isActive: index == _pageIndex),
                     ),
                   ),
-                  const Spacer(),
+                  Gap(5.w),
                   FloatingActionButton.small(
+                    heroTag: 'next',
+                    shape: CircleBorder(),
                     onPressed: () {
                       if (_pageIndex + 1 == _nbreSlides) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const LoginPage(),
-                          ),
-                        );
                         return;
                       }
                       _pageController.nextPage(
@@ -97,18 +169,67 @@ class _IntroPageState extends State<IntroPage> {
                         duration: const Duration(milliseconds: 300),
                       );
                     },
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.white,
                     child: Icon(
-                      Icons.navigate_next,
-                      color: Colors.black87,
+                      Icons.navigate_next_outlined,
+                      color: appColor,
                       size: 20.sp,
                     ),
                   ),
                 ],
-              )
+              ),
+              Gap(3.h),
+              SubmitButton(
+                AppConstants.btnNext,
+                onPressed: () async {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const MenuPage(),
+                    ),
+                  );
+                },
+              ),
+              Gap(1.h),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginPage(),
+                    ),
+                  );
+                },
+                child: Text(
+                  "Avez-vous déjà un compte? Connexion",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: appColor,
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.w300,
+                    fontSize: 15,
+                  ),
+                ),
+              ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTag(String text, Color color) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Text(
+        text,
+        style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+          fontSize: 12,
         ),
       ),
     );
@@ -118,50 +239,42 @@ class _IntroPageState extends State<IntroPage> {
 class TestScreenContent extends StatelessWidget {
   const TestScreenContent({
     super.key,
-    required this.image,
     required this.titre,
     required this.subTitre,
   });
 
-  final String image, titre, subTitre;
+  final String titre, subTitre;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: appColor,
+      backgroundColor: appWhite,
       body: SafeArea(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(
-              height: 10,
-            ),
-            Container(
-              alignment: Alignment.center,
-              margin: const EdgeInsets.only(left: 40, right: 55),
-              child: Image.asset(
-                image,
-              ),
-            ),
-            const Spacer(),
             Text(
               titre,
+              textAlign: TextAlign.center,
               style: TextStyle(
                 color: appBlack,
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                fontStyle: FontStyle.italic,
+                fontStyle: FontStyle.normal,
               ),
             ),
+            Gap(2.w),
             Text(
               subTitre,
+              textAlign: TextAlign.center,
               style: TextStyle(
                 color: appBlack,
                 fontSize: 16,
-                fontWeight: FontWeight.bold,
-                fontStyle: FontStyle.italic,
+                fontWeight: FontWeight.normal,
+                fontStyle: FontStyle.normal,
               ),
             ),
-            const Spacer(),
           ],
         ),
       ),
@@ -170,10 +283,9 @@ class TestScreenContent extends StatelessWidget {
 }
 
 class Onboard {
-  final String image, titre, subTitre;
+  final String titre, subTitre;
 
   Onboard({
-    required this.image,
     required this.titre,
     required this.subTitre,
   });
@@ -181,20 +293,21 @@ class Onboard {
 
 final List<Onboard> demoData = [
   Onboard(
-    image: "assets/images/dons.png",
-    titre: "Dons",
-    subTitre: "Faites un geste pour encourager votre joueur",
+    titre: "Trouver votre parfait, le cheminement de carrière commence ici !",
+    subTitre: "Confus à la recherche d'emplois mis à jour et voyons ici beaucoup d'offres d'emploi",
   ),
   Onboard(
-    image: "assets/images/vote.png",
-    titre: "Voter",
-    subTitre: "Votez pour faire gagner votre meilleur joueur du match",
+    titre: "Trouver votre parfait, le cheminement de carrière commence ici !",
+    subTitre: "Confus à la recherche d'emplois mis à jour et voyons ici beaucoup d'offres d'emploi",
   ),
   Onboard(
-    image: "assets/images/reco.png",
-    titre: "Récompenses",
-    subTitre: "Vous pouvez gagner des lots en étant des participants",
-  )
+    titre: "Trouver votre parfait, le cheminement de carrière commence ici !",
+    subTitre: "Confus à la recherche d'emplois mis à jour et voyons ici beaucoup d'offres d'emploi",
+  ),
+  Onboard(
+    titre: "Trouver votre parfait, le cheminement de carrière commence ici !",
+    subTitre: "Confus à la recherche d'emplois mis à jour et voyons ici beaucoup d'offres d'emploi",
+  ),
 ];
 
 class DotIndicator extends StatelessWidget {
@@ -212,7 +325,7 @@ class DotIndicator extends StatelessWidget {
       height: isActive ? 3.w : 2.w,
       width: 3.w,
       decoration: BoxDecoration(
-        color: isActive ? Colors.white : Colors.white54,
+        color: isActive ? appColor : appColor.withOpacity(.2),
         borderRadius: const BorderRadius.all(Radius.circular(10)),
       ),
     );

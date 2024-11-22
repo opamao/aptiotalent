@@ -4,6 +4,7 @@ class AppConstants {
   static const appName = "AptioTalent";
 
   static const btnLogin = "Se connecter";
+  static const btnNext = "Commençons";
   static const btnRegister = "S'enregistrer";
   static const btnValid = "Valider";
   static const btnContinue = "Continuer";

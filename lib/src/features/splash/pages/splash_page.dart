@@ -57,48 +57,16 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: appWhite,
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: appColor,
-                    borderRadius: const BorderRadius.only(
-                      bottomRight: Radius.circular(167.5),
-                    ),
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Center(
-                  child: Text(
-                    AppConstants.appName,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: appWhite,
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold,
-                      fontStyle: FontStyle.italic,
-                    ),
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: appColor,
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(167.5),
-                    ),
-                  ),
-                ),
-              ),
-            ],
+      backgroundColor: appColor,
+      body: Center(
+        child: Text(
+          AppConstants.appName,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: appWhite,
+            fontSize: 40,
+            fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.normal,
           ),
         ),
       ),

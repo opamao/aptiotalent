@@ -23,10 +23,6 @@ class _MenuPageState extends State<MenuPage> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        leading: Padding(
-          padding: EdgeInsets.all(4.w),
-          child: Image.asset("assets/images/ligue.png"),
-        ),
         actions: [
           Padding(
             padding: EdgeInsets.all(4.w),

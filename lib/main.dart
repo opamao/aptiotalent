@@ -1,4 +1,5 @@
 import 'package:aptiotalent/constants/constants.dart';
+import 'package:aptiotalent/src/features/splash/spalsh.dart';
 import 'package:aptiotalent/src/themes/themes/themes.dart';
 import 'package:aptiotalent/utils/utilis.dart';
 import 'package:flutter/material.dart';
@@ -19,12 +20,13 @@ class MyApp extends StatelessWidget {
     return Sizer(builder: (context, _, __) {
     return MaterialApp(
       title: AppConstants.appName,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: appColor),
         textTheme: GoogleFonts.josefinSansTextTheme(),
         useMaterial3: true,
       ),
-      home: Container(),
+      home: SplashPage(),
     );
   });
   }

@@ -1,4 +1,4 @@
-import 'package:aptiotalent/src/themes/themes/themes.dart';
+import 'package:aptiotalent/src/themes/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:shared_preferences/shared_preferences.dart';

@@ -1,7 +1,7 @@
 import 'package:aptiotalent/constants/constants.dart';
 import 'package:aptiotalent/src/features/splash/spalsh.dart';
-import 'package:aptiotalent/src/themes/themes/themes.dart';
-import 'package:aptiotalent/utils/utilis.dart';
+import 'package:aptiotalent/src/themes/themes.dart';
+import 'package:aptiotalent/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';

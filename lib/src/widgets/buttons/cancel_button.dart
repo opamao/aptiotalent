@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../themes/themes/themes.dart';
+import '../../themes/themes.dart';
 
 
 class CancelButton extends StatelessWidget {

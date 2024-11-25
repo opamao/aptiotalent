@@ -1,8 +1,8 @@
-import 'package:aptiotalent/src/themes/themes/themes.dart';
+import 'package:aptiotalent/src/themes/themes.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../constants/constants.dart';
-import '../../../../utils/utilis.dart';
+import '../../../../utils/utils.dart';
 import '../../intro/intro.dart';
 import '../../menus/menus.dart';
 

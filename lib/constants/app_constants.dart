@@ -15,4 +15,6 @@ class AppConstants {
   static const btnDons = "Faire un don";
   static const btnCash = "Retirer";
   static const btnMatch = "Homme du match";
+  static const btnSetup = "Suivant";
+  static const btnYes = "Oui";
 }

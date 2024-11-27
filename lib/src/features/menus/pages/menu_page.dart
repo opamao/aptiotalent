@@ -14,9 +14,9 @@ class _MenuPageState extends State<MenuPage> {
   int currentPageIndex = 0;
 
   final Widget _home = Container();
-  final Widget _historique = Container();
-  final Widget _actualite = Container();
-  final Widget _profil = Container();
+  final Widget _book = Container();
+  final Widget _message = Container();
+  final Widget _profile = Container();
 
   @override
   Widget build(BuildContext context) {
@@ -75,28 +75,28 @@ class _MenuPageState extends State<MenuPage> {
         destinations: <Widget>[
           NavigationDestination(
             icon: Icon(
-              Icons.sports_soccer_outlined,
+              Icons.home_outlined,
               color: currentPageIndex == 0 ? appWhite : appBlack,
             ),
-            label: "Sports",
+            label: "Accueil",
           ),
           NavigationDestination(
             icon: Icon(
-              Icons.history_outlined,
+              Icons.bookmark_border_outlined,
               color: currentPageIndex == 1 ? appWhite : appBlack,
             ),
-            label: "Historique",
+            label: "Postuler",
           ),
           NavigationDestination(
             icon: Icon(
-              Icons.newspaper_outlined,
+              Icons.chat_bubble_outline_outlined,
               color: currentPageIndex == 2 ? appWhite : appBlack,
             ),
-            label: "Actualité",
+            label: "Messages",
           ),
           NavigationDestination(
             icon: Icon(
-              Icons.person_outlined,
+              Icons.person_outline_outlined,
               color: currentPageIndex == 3 ? appWhite : appBlack,
             ),
             label: "Profil",
@@ -111,11 +111,11 @@ class _MenuPageState extends State<MenuPage> {
     if (currentPageIndex == 0) {
       return _home;
     } else if (currentPageIndex == 1) {
-      return _historique;
+      return _book;
     } else if (currentPageIndex == 2) {
-      return _actualite;
+      return _message;
     } else {
-      return _profil;
+      return _profile;
     }
   }
 }

@@ -3,7 +3,7 @@ import 'package:sizer/sizer.dart';
 
 import '../../themes/themes.dart';
 
-class InputText extends StatelessWidget {
+class InputText extends StatefulWidget {
   final TextEditingController controller;
   final TextInputType? keyboardType;
   final String? hintText;
@@ -38,33 +38,63 @@ class InputText extends StatelessWidget {
   });
 
   @override
+  State<InputText> createState() => _InputTextState();
+}
+
+class _InputTextState extends State<InputText> {
+  final FocusNode _focusNode = FocusNode();
+  bool _isFocused = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _focusNode.addListener(() {
+      setState(() {
+        _isFocused = _focusNode.hasFocus;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _focusNode.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: borderColor == null ? Border.all(color: appBlack) : null,
+        border: Border.all(
+          color: _isFocused
+              ? (widget.borderColor ?? appColor)
+              : Colors.transparent,
+          width: 1.5,
+        ),
         borderRadius: BorderRadius.circular(3.w),
       ),
       //padding: EdgeInsets.symmetric(horizontal: 2.w),
       child: TextFormField(
-        keyboardType: keyboardType,
-        controller: controller,
-        obscureText: obscureText,
+        focusNode: _focusNode,
+        keyboardType: widget.keyboardType,
+        controller: widget.controller,
+        obscureText: widget.obscureText,
         textInputAction: TextInputAction.done,
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(3.w),
             borderSide: BorderSide.none,
           ),
-          fillColor: colorFille ?? Colors.white,
+          fillColor: widget.colorFille ?? appColor.withOpacity(.08),
           filled: true,
-          hintText: hintText,
-          prefixIcon: prefixIcon,
-          suffixIcon: suffixIcon,
+          hintText: widget.hintText,
+          prefixIcon: widget.prefixIcon,
+          suffixIcon: widget.suffixIcon,
         ),
-        maxLines: maxLines ?? 1,
+        maxLines: widget.maxLines ?? 1,
         validator: (value) {
           if (value!.isEmpty) {
-            return validatorMessage;
+            return widget.validatorMessage;
           } else {
             return null;
           }

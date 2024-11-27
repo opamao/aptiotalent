@@ -8,20 +8,22 @@ class CancelButton extends StatelessWidget {
   final String title;
   final Function() onPressed;
   final double? height;
+  final double? width;
   final double? fontSize;
 
   const CancelButton(
       this.title, {super.key,
         required this.onPressed,
         this.height,
+        this.width,
         this.fontSize,
       });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      height: height ?? 12.w,
+      width: width ?? double.infinity,
+      height: height ?? 14.w,
       padding: EdgeInsets.symmetric(horizontal: 2.w),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
@@ -35,7 +37,7 @@ class CancelButton extends StatelessWidget {
         child: Text(
           title,
           style: TextStyle(
-            fontSize: fontSize ?? 12.sp,
+            fontSize: fontSize ?? 18.sp,
             color: appColor,
             fontWeight: FontWeight.bold,
           ),

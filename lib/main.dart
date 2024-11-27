@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: appColor),
         textTheme: GoogleFonts.josefinSansTextTheme(),
         useMaterial3: true,
+        scaffoldBackgroundColor: appWhite,
       ),
       home: SplashPage(),
     );

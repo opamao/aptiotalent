@@ -5,20 +5,21 @@ import 'package:sizer/sizer.dart';
 import '../../../../../constants/constants.dart';
 import '../../../../themes/themes.dart';
 import '../../../../widgets/widgets.dart';
-import '../forgot.dart';
+import '../../../menus/menus.dart';
 
-class ForgotPage extends StatefulWidget {
-  const ForgotPage({super.key});
+class NewPasswordPage extends StatefulWidget {
+  const NewPasswordPage({super.key});
 
   @override
-  State<ForgotPage> createState() => _ForgotPageState();
+  State<NewPasswordPage> createState() => _NewPasswordPageState();
 }
 
-class _ForgotPageState extends State<ForgotPage> {
+class _NewPasswordPageState extends State<NewPasswordPage> {
   final _formKey = GlobalKey<FormState>();
+  bool _obscure = true;
 
-  var login = TextEditingController();
   var password = TextEditingController();
+  var newPassword = TextEditingController();
 
   final _snackBar = const SnackBar(
     content: Text("Tous les champs sont obligatoires"),
@@ -72,7 +73,7 @@ class _ForgotPageState extends State<ForgotPage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          "Mot de passe oublié",
+                          "Nouveau mot de passe",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: appBlack,
@@ -81,9 +82,9 @@ class _ForgotPageState extends State<ForgotPage> {
                           ),
                         ),
                         Text(
-                          "Entrez votre adresse e-mail qui est associé a votre "
-                          "compte et vous receverai un mail pour "
-                          "réinitialisation de mot de passe.",
+                          "Veuillez saisir un nouveau mot de passe. "
+                          "Le nouveau mot de passe ne doit pas être "
+                          "le même que le précédent.",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: appBlack,
@@ -95,21 +96,44 @@ class _ForgotPageState extends State<ForgotPage> {
                     ),
                   ),
                   Gap(2.h),
-                  InputText(
-                    hintText: "Adresse e-mail",
-                    keyboardType: TextInputType.text,
-                    controller: login,
-                    validatorMessage: "Veuillez saisir votre email",
+                  InputPassword(
+                    hintText: "Mot de passe",
+                    controller: password,
+                    validatorMessage: "Veuillez saisir votre mot de passe",
+                    suffixIcon: IconButton(
+                        icon: Icon(
+                          _obscure ? Icons.visibility_off : Icons.visibility,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            _obscure = !_obscure;
+                          });
+                        }),
+                  ),
+                  Gap(2.h),
+                  InputPassword(
+                    hintText: "Confirmer le mot de passe",
+                    controller: newPassword,
+                    validatorMessage: "Veuillez saisir votre mot de passe",
+                    suffixIcon: IconButton(
+                        icon: Icon(
+                          _obscure ? Icons.visibility_off : Icons.visibility,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            _obscure = !_obscure;
+                          });
+                        }),
                   ),
                   Gap(2.h),
                   SubmitButton(
-                    AppConstants.btnPassword,
+                    AppConstants.btnContinue,
                     onPressed: () async {
                       if (_formKey.currentState!.validate()) {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => CodeOtpPage(),
+                            builder: (context) => MenuPage(),
                           ),
                         );
                       } else {

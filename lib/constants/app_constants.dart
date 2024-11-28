@@ -10,11 +10,8 @@ class AppConstants {
   static const btnContinue = "Continuer";
   static const btnCancel = "Annuler";
   static const btnBack = "Retour";
-  static const btnUpdate = "Mettre tout à jour";
-  static const btnUp = "Mettre à jour";
-  static const btnDons = "Faire un don";
-  static const btnCash = "Retirer";
-  static const btnMatch = "Homme du match";
   static const btnSetup = "Suivant";
   static const btnYes = "Oui";
+  static const btnPassword = "Retrouver";
+  static const btnProceed = "Vérifier et poursuivre";
 }

@@ -24,6 +24,7 @@ dependencies:
   gap: ^3.0.1
   http: ^1.2.2
   pinput: ^5.0.0
+  syncfusion_flutter_gauges: ^27.2.4
 
 dev_dependencies:
   flutter_test:

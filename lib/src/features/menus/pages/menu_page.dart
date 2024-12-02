@@ -4,6 +4,7 @@ import 'package:sizer/sizer.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 import '../../../themes/themes.dart';
+import '../../home/home.dart';
 import '../../notifications/notifs.dart';
 import '../../profiles/profiles.dart';
 
@@ -17,7 +18,7 @@ class MenuPage extends StatefulWidget {
 class _MenuPageState extends State<MenuPage> {
   int currentPageIndex = 0;
 
-  final Widget _home = Container();
+  final Widget _home = HomePage();
   final Widget _book = Container();
   final Widget _message = Container();
   final Widget _profile = ProfilePage();
@@ -26,6 +27,7 @@ class _MenuPageState extends State<MenuPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: appWhite,
         title: TextButton(
           onPressed: () {},
           child: Row(

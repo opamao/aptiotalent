@@ -17,18 +17,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Sizer(builder: (context, _, __) {
-    return MaterialApp(
-      title: AppConstants.appName,
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: appColor),
-        textTheme: GoogleFonts.josefinSansTextTheme(),
-        useMaterial3: true,
-        scaffoldBackgroundColor: appWhite,
-      ),
-      home: SplashPage(),
-    );
-  });
+    return Sizer(builder: (context, orientation, deviceType) {
+      return MaterialApp(
+        title: AppConstants.appName,
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: appColor),
+          textTheme: GoogleFonts.josefinSansTextTheme(),
+          useMaterial3: true,
+        ),
+        home: SplashPage(),
+      );
+    });
   }
 }

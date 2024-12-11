@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../themes/themes.dart';
+import '../messages.dart';
 
-class NotificationsPage extends StatefulWidget {
-  const NotificationsPage({super.key});
+class MessagePage extends StatefulWidget {
+  const MessagePage({super.key});
 
   @override
-  State<NotificationsPage> createState() => _NotificationsPageState();
+  State<MessagePage> createState() => _MessagePageState();
 }
 
-class _NotificationsPageState extends State<NotificationsPage> {
+class _MessagePageState extends State<MessagePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: appWhite,
-      appBar: AppBar(
-        title: Text("Notifications"),
-        centerTitle: true,
-      ),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.all(4.w),
@@ -34,8 +30,16 @@ class _NotificationsPageState extends State<NotificationsPage> {
                   borderRadius: BorderRadius.circular(3.w),
                 ),
                 child: ListTile(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailMessagePage(),
+                      ),
+                    );
+                  },
                   title: Text(
-                    "Détails basique",
+                    "Entreprise",
                     style: TextStyle(
                       color: appBlack,
                       fontSize: 15.sp,
@@ -43,20 +47,22 @@ class _NotificationsPageState extends State<NotificationsPage> {
                     ),
                   ),
                   subtitle: Text(
-                    "Une petite description du poste Une petite description "
-                    "du poste Une petite description du poste ",
+                    "Message",
                     style: TextStyle(
                       color: appBlack,
                       fontSize: 13.sp,
                       fontWeight: FontWeight.normal,
                     ),
                   ),
-                  leading: Icon(
-                    Icons.person_outline_outlined,
-                    color: appColor,
+                  leading: ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(3.w)),
+                    child: Icon(
+                      Icons.person_outline_outlined,
+                      color: appColor,
+                    ),
                   ),
                   trailing: Text(
-                    "2 jours",
+                    "2 heures",
                     style: TextStyle(
                       color: appBlack,
                       fontSize: 12.sp,

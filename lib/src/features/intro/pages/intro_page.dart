@@ -148,7 +148,7 @@ class _IntroPageState extends State<IntroPage> {
                       size: 20.sp,
                     ),
                   ),
-                  Gap(5.w),
+                  Spacer(),
                   ...List.generate(
                     demoData.length,
                     (index) => Padding(
@@ -156,7 +156,7 @@ class _IntroPageState extends State<IntroPage> {
                       child: DotIndicator(isActive: index == _pageIndex),
                     ),
                   ),
-                  Gap(5.w),
+                  Spacer(),
                   FloatingActionButton.small(
                     heroTag: 'next',
                     shape: CircleBorder(),

@@ -5,6 +5,7 @@ import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 import '../../../themes/themes.dart';
 import '../../home/home.dart';
+import '../../messages/pages/pages.dart';
 import '../../notifications/notifs.dart';
 import '../../profiles/profiles.dart';
 
@@ -20,7 +21,7 @@ class _MenuPageState extends State<MenuPage> {
 
   final Widget _home = HomePage();
   final Widget _book = Container();
-  final Widget _message = Container();
+  final Widget _message = MessagePage();
   final Widget _profile = ProfilePage();
 
   @override
@@ -60,6 +61,7 @@ class _MenuPageState extends State<MenuPage> {
         ],
       ),
       drawer: Drawer(
+        backgroundColor: appWhite,
         child: Column(
           children: [
             Expanded(

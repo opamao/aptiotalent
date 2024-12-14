@@ -52,7 +52,7 @@ class _ThirdPageState extends State<ThirdPage> {
         border: Border.all(
           color: _selectedGenders.contains(value)
               ? appColor
-              : appColor.withOpacity(.2),
+              : appColor.withValues(alpha:.2),
           width: 1.5,
         ),
         borderRadius: BorderRadius.circular(3.w),

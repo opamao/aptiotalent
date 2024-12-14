@@ -85,7 +85,7 @@ class _InputTextState extends State<InputText> {
             borderRadius: BorderRadius.circular(3.w),
             borderSide: BorderSide.none,
           ),
-          fillColor: widget.colorFille ?? appColor.withOpacity(.08),
+          fillColor: widget.colorFille ?? appColor.withValues(alpha:.08),
           filled: true,
           hintText: widget.hintText,
           prefixIcon: widget.prefixIcon,

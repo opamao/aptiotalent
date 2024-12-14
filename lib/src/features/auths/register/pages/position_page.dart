@@ -26,7 +26,7 @@ class _PositionPageState extends State<PositionPage> {
           padding: const EdgeInsets.all(8.0),
           child: CircleAvatar(
             radius: 10,
-            backgroundColor: appColor.withOpacity(.08),
+            backgroundColor: appColor.withValues(alpha:.08),
             child: InkWell(
               onTap: () => Navigator.pop(context),
               child: Icon(

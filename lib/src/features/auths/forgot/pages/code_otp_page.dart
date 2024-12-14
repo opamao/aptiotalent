@@ -81,8 +81,8 @@ class _CodeOtpPageState extends State<CodeOtpPage> {
                     heroTag: 'back',
                     shape: CircleBorder(),
                     onPressed: () => Navigator.pop(context),
-                    backgroundColor: appColor.withOpacity(.08),
-                    foregroundColor: appColor.withOpacity(.08),
+                    backgroundColor: appColor.withValues(alpha:.08),
+                    foregroundColor: appColor.withValues(alpha:.08),
                     child: Icon(
                       Icons.arrow_back_outlined,
                       color: appColor,
@@ -94,7 +94,7 @@ class _CodeOtpPageState extends State<CodeOtpPage> {
                     child: Container(
                       padding: EdgeInsets.all(8.w),
                       decoration: BoxDecoration(
-                        color: appColor.withOpacity(.1),
+                        color: appColor.withValues(alpha:.1),
                         borderRadius: BorderRadius.all(Radius.circular(8.w)),
                       ),
                       child: Icon(

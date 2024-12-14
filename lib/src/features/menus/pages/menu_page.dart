@@ -88,7 +88,7 @@ class _MenuPageState extends State<MenuPage> {
                                     axisLineStyle: AxisLineStyle(
                                       thickness: 0.1,
                                       cornerStyle: CornerStyle.bothCurve,
-                                      color: appColor.withOpacity(.12),
+                                      color: appColor.withValues(alpha:.12),
                                       thicknessUnit: GaugeSizeUnit.factor,
                                     ),
                                     pointers: <GaugePointer>[
@@ -112,6 +112,9 @@ class _MenuPageState extends State<MenuPage> {
                                   height: 7.h,
                                   width: 7.h,
                                   fit: BoxFit.cover,
+                                  errorBuilder: (context, error, stackTrace) {
+                                    return Icon(Icons.image_not_supported);
+                                  },
                                 ),
                               ),
                             ),

@@ -24,7 +24,7 @@ class _MessagePageState extends State<MessagePage> {
               Container(
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: appColor.withOpacity(.12),
+                    color: appColor.withValues(alpha:.12),
                     width: 1.0,
                   ),
                   borderRadius: BorderRadius.circular(3.w),

@@ -73,8 +73,8 @@ class _RegisterPageState extends State<RegisterPage> {
                     heroTag: 'backOne',
                     shape: CircleBorder(),
                     onPressed: () => Navigator.pop(context),
-                    backgroundColor: appColor.withOpacity(.08),
-                    foregroundColor: appColor.withOpacity(.08),
+                    backgroundColor: appColor.withValues(alpha:.08),
+                    foregroundColor: appColor.withValues(alpha:.08),
                     child: Icon(
                       Icons.arrow_back_outlined,
                       color: appColor,
@@ -188,7 +188,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   Container(
                     padding: EdgeInsets.only(left: 4.w),
                     decoration: BoxDecoration(
-                      color: appColor.withOpacity(.08),
+                      color: appColor.withValues(alpha:.08),
                       borderRadius: BorderRadius.circular(3.w),
                       border: Border.all(
                         color: _isFocused ? appColor : Colors.transparent,
@@ -290,7 +290,7 @@ class _RegisterPageState extends State<RegisterPage> {
         decoration: BoxDecoration(
           border: Border.all(
             color:
-                _selectedGender == value ? appColor : appColor.withOpacity(.2),
+                _selectedGender == value ? appColor : appColor.withValues(alpha:.2),
             width: 1.5,
           ),
           borderRadius: BorderRadius.circular(3.w),

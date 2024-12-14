@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../themes/themes.dart';
@@ -28,7 +27,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
               Container(
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: appColor.withOpacity(.12),
+                    color: appColor.withValues(alpha:.12),
                     width: 1.0,
                   ),
                   borderRadius: BorderRadius.circular(3.w),

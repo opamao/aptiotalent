@@ -41,7 +41,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               axisLineStyle: AxisLineStyle(
                                 thickness: 0.1,
                                 cornerStyle: CornerStyle.bothCurve,
-                                color: appColor.withOpacity(.12),
+                                color: appColor.withValues(alpha:.12),
                                 thicknessUnit: GaugeSizeUnit.factor,
                               ),
                               pointers: <GaugePointer>[
@@ -65,6 +65,9 @@ class _ProfilePageState extends State<ProfilePage> {
                             height: 7.h,
                             width: 7.h,
                             fit: BoxFit.cover,
+                            errorBuilder: (context, error, stackTrace) {
+                              return Icon(Icons.image_not_supported);
+                            },
                           ),
                         ),
                       ),
@@ -132,7 +135,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     Container(
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: appColor.withOpacity(.12),
+                          color: appColor.withValues(alpha:.12),
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(3.w),
@@ -172,7 +175,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     Container(
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: appColor.withOpacity(.12),
+                          color: appColor.withValues(alpha:.12),
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(3.w),
@@ -212,7 +215,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     Container(
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: appColor.withOpacity(.12),
+                          color: appColor.withValues(alpha:.12),
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(3.w),
@@ -252,7 +255,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     Container(
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: appColor.withOpacity(.12),
+                          color: appColor.withValues(alpha:.12),
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(3.w),
@@ -292,7 +295,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     Container(
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: appColor.withOpacity(.12),
+                          color: appColor.withValues(alpha:.12),
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(3.w),
@@ -332,7 +335,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     Container(
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: appColor.withOpacity(.12),
+                          color: appColor.withValues(alpha:.12),
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(3.w),
@@ -372,7 +375,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     Container(
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: appColor.withOpacity(.12),
+                          color: appColor.withValues(alpha:.12),
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(3.w),
@@ -412,7 +415,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     Container(
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: appColor.withOpacity(.12),
+                          color: appColor.withValues(alpha:.12),
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(3.w),

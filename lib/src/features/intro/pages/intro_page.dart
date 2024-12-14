@@ -69,7 +69,7 @@ class _IntroPageState extends State<IntroPage> {
                       height: 350,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Colors.blue.withOpacity(0.1),
+                        color: Colors.blue.withValues(alpha:0.1),
                       ),
                     ),
                     Positioned(
@@ -80,7 +80,7 @@ class _IntroPageState extends State<IntroPage> {
                     Positioned(
                       child: CircleAvatar(
                         radius: 80,
-                        backgroundColor: appColor.withOpacity(.2),
+                        backgroundColor: appColor.withValues(alpha:.2),
                       ),
                     ),
                     // Tags
@@ -325,7 +325,7 @@ class DotIndicator extends StatelessWidget {
       height: isActive ? 3.w : 2.w,
       width: 3.w,
       decoration: BoxDecoration(
-        color: isActive ? appColor : appColor.withOpacity(.2),
+        color: isActive ? appColor : appColor.withValues(alpha:.2),
         borderRadius: const BorderRadius.all(Radius.circular(10)),
       ),
     );

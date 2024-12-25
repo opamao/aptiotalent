@@ -4,10 +4,12 @@ import 'package:sizer/sizer.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 import '../../../themes/themes.dart';
+import '../../bookmark/bookmark.dart';
 import '../../home/home.dart';
 import '../../messages/pages/pages.dart';
 import '../../notifications/notifs.dart';
 import '../../profiles/profiles.dart';
+import '../menus.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
@@ -20,7 +22,7 @@ class _MenuPageState extends State<MenuPage> {
   int currentPageIndex = 0;
 
   final Widget _home = HomePage();
-  final Widget _book = Container();
+  final Widget _book = BookmarkPage();
   final Widget _message = MessagePage();
   final Widget _profile = ProfilePage();
 
@@ -88,7 +90,7 @@ class _MenuPageState extends State<MenuPage> {
                                     axisLineStyle: AxisLineStyle(
                                       thickness: 0.1,
                                       cornerStyle: CornerStyle.bothCurve,
-                                      color: appColor.withValues(alpha:.12),
+                                      color: appColor.withValues(alpha: .12),
                                       thicknessUnit: GaugeSizeUnit.factor,
                                     ),
                                     pointers: <GaugePointer>[
@@ -181,7 +183,29 @@ class _MenuPageState extends State<MenuPage> {
                       Icons.bookmark_border_outlined,
                       color: appColor,
                     ),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => JobSavedPage(),
+                        ),
+                      );
+                    },
+                  ),
+                  ListTile(
+                    title: const Text("Statut de recherche d'emploi"),
+                    leading: Icon(
+                      Icons.remove_red_eye_outlined,
+                      color: appColor,
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => StatusPage(),
+                        ),
+                      );
+                    },
                   ),
                   ListTile(
                     title: const Text("Obtenir de l'aide"),
@@ -189,7 +213,14 @@ class _MenuPageState extends State<MenuPage> {
                       Icons.chat_bubble_outline_outlined,
                       color: appColor,
                     ),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ChatsPage(),
+                        ),
+                      );
+                    },
                   ),
                   ListTile(
                     title: const Text("Langues"),
@@ -197,7 +228,14 @@ class _MenuPageState extends State<MenuPage> {
                       Icons.language_outlined,
                       color: appColor,
                     ),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LanguagePage(),
+                        ),
+                      );
+                    },
                   ),
                   ListTile(
                     title: const Text("Paramètres"),
@@ -205,15 +243,14 @@ class _MenuPageState extends State<MenuPage> {
                       Icons.settings_outlined,
                       color: appColor,
                     ),
-                    onTap: () {},
-                  ),
-                  ListTile(
-                    title: const Text("Notifications"),
-                    leading: Icon(
-                      Icons.notifications_outlined,
-                      color: appColor,
-                    ),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SettingsPage(),
+                        ),
+                      );
+                    },
                   ),
                   ListTile(
                     title: const Text("Centre d'aide"),
@@ -221,7 +258,14 @@ class _MenuPageState extends State<MenuPage> {
                       Icons.help_outline_outlined,
                       color: appColor,
                     ),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HelpsPage(),
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),

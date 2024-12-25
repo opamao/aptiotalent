@@ -6,6 +6,7 @@ import 'package:gap/gap.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../widgets/widgets.dart';
+import '../../entreprises/entreprises.dart';
 
 class JobDetailPage extends StatefulWidget {
   const JobDetailPage({super.key});
@@ -84,7 +85,14 @@ class _JobDetailPageState extends State<JobDetailPage>
                   ),
                 ),
                 subtitle: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => EntreprisePage(),
+                      ),
+                    );
+                  },
                   child: Text(
                     "AptioTech",
                     style: TextStyle(

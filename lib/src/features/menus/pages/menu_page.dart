@@ -202,7 +202,7 @@ class _MenuPageState extends State<MenuPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => StatusPage(),
+                          builder: (context) => JobSavedPage(),
                         ),
                       );
                     },

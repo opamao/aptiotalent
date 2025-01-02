@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+import 'package:sizer/sizer.dart';
 
+import '../../../../../constants/constants.dart';
 import '../../../../themes/themes.dart';
+import '../../../../widgets/widgets.dart';
 import '../../menus.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -14,6 +18,7 @@ class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: appWhite,
       appBar: AppBar(
         title: Text("Paramètres"),
       ),
@@ -68,7 +73,80 @@ class _SettingsPageState extends State<SettingsPage> {
                 Icons.navigate_next_outlined,
                 color: appColor,
               ),
-              onTap: () {},
+              onTap: () {
+                showModalBottomSheet<void>(
+                  context: context,
+                  backgroundColor: appWhite,
+                  builder: (BuildContext context) {
+                    return SizedBox(
+                      height: 300,
+                      child: Padding(
+                        padding: EdgeInsets.all(4.w),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            Text(
+                              "Vous ne pourrez plus suivre vos activités personnelles. Êtes-vous sûr?",
+                              style: TextStyle(
+                                color: appBlack,
+                                fontSize: 18.sp,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Gap(2.h),
+                            Container(
+                              padding: EdgeInsets.all(2.w),
+                              decoration: BoxDecoration(
+                                color: appColor.withValues(alpha: .1),
+                                borderRadius: BorderRadius.circular(3.w),
+                              ),
+                              child: ListTile(
+                                leading: Icon(
+                                  Icons.info_outline,
+                                  color: appColor,
+                                ),
+                                title: Text(
+                                  "La suppression de votre compte sera "
+                                  "irrévessible. Toutes vos informations et "
+                                  "aux offres vous avez postuler seront supprimer.",
+                                  style: TextStyle(
+                                    color: appColor,
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Gap(2.h),
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: CancelButton(
+                                    AppConstants.btnCancel,
+                                    height: 10.w,
+                                    fontSize: 15.sp,
+                                    onPressed: () => Navigator.pop(context),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: SubmitButton(
+                                    AppConstants.btnDelete,
+                                    height: 10.w,
+                                    fontSize: 15.sp,
+                                    couleur: Colors.red,
+                                    onPressed: () async {},
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                );
+              },
             ),
             ListTile(
               title: const Text("Thème"),

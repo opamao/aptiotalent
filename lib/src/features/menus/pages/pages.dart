@@ -6,4 +6,3 @@ export 'language/language_page.dart';
 export 'settings/settings_page.dart';
 export 'settings/notification_settings_page.dart';
 export 'settings/password_manager_page.dart';
-export 'status/status_page.dart';

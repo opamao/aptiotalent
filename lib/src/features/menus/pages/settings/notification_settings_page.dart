@@ -24,6 +24,7 @@ class _NotificationSettingsPageState extends State<NotificationSettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: appWhite,
       appBar: AppBar(
         title: Text("Paramètres notifications"),
       ),

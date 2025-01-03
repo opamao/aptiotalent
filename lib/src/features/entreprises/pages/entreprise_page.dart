@@ -45,13 +45,6 @@ class _EntreprisePageState extends State<EntreprisePage>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: appWhite,
-      bottomNavigationBar: Padding(
-        padding: EdgeInsets.all(4.w),
-        child: SubmitButton(
-          AppConstants.btnApply,
-          onPressed: () {},
-        ),
-      ),
       appBar: AppBar(
         title: Text("AptioTalent"),
         actions: [

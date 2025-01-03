@@ -9,10 +9,12 @@ class AppConstants {
   static const btnValid = "Valider";
   static const btnContinue = "Continuer";
   static const btnCancel = "Annuler";
+  static const btnClose = "X";
   static const btnDelete = "Supprimer";
   static const btnBack = "Retour";
   static const btnSetup = "Suivant";
   static const btnYes = "Oui";
+  static const btnSearch = "Filtrer";
   static const btnPassword = "Retrouver";
   static const btnSave = "Enregistrer";
   static const btnEditPassword = "Modifier";

@@ -3,12 +3,15 @@ import 'package:gap/gap.dart';
 import 'package:sizer/sizer.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
+import '../../../../constants/constants.dart';
 import '../../../themes/themes.dart';
+import '../../../widgets/widgets.dart';
 import '../../bookmark/bookmark.dart';
 import '../../home/home.dart';
 import '../../messages/pages/pages.dart';
 import '../../notifications/notifs.dart';
 import '../../profiles/profiles.dart';
+import '../../searchs/searchs.dart';
 import '../menus.dart';
 
 class MenuPage extends StatefulWidget {
@@ -26,13 +29,106 @@ class _MenuPageState extends State<MenuPage> {
   final Widget _message = MessagePage();
   final Widget _profile = ProfilePage();
 
+  var search = TextEditingController();
+  var location = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: appWhite,
         title: TextButton(
-          onPressed: () {},
+          onPressed: () {
+            showDialog<void>(
+              context: context,
+              builder: (BuildContext context) {
+                return Align(
+                  alignment: Alignment.topCenter, // Positionner en haut
+                  child: Material(
+                    color: Colors.transparent, // Fond transparent pour le reste
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.9,
+                      // Largeur ajustable
+                      margin: EdgeInsets.only(top: 50),
+                      // Marges depuis le haut
+                      padding: EdgeInsets.all(4.w),
+                      decoration: BoxDecoration(
+                        color: appWhite,
+                        borderRadius: BorderRadius.circular(3.w),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black26,
+                            blurRadius: 10,
+                            offset: Offset(0, 4),
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          InputText(
+                            keyboardType: TextInputType.text,
+                            controller: search,
+                            hintText: "Titre du poste, Entreprise...",
+                            prefixIcon: Padding(
+                              padding: EdgeInsets.all(0),
+                              child: Icon(
+                                Icons.home_repair_service_outlined,
+                                color: appColor,
+                              ),
+                            ),
+                          ),
+                          Gap(1.h),
+                          InputText(
+                            keyboardType: TextInputType.text,
+                            controller: location,
+                            hintText: "Commune, Ville, Pays",
+                            prefixIcon: Padding(
+                              padding: EdgeInsets.all(0),
+                              child: Icon(
+                                Icons.my_location_outlined,
+                                color: appColor,
+                              ),
+                            ),
+                          ),
+                          Gap(2.h),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: CancelButton(
+                                  AppConstants.btnClose,
+                                  height: 10.w,
+                                  fontSize: 15.sp,
+                                  onPressed: () => Navigator.pop(context),
+                                ),
+                              ),
+                              Expanded(
+                                flex: 3,
+                                child: SubmitButton(
+                                  AppConstants.btnSearch,
+                                  height: 12.w,
+                                  fontSize: 15.sp,
+                                  onPressed: () async {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            ResultSearchPage(),
+                                      ),
+                                    );
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              },
+            );
+          },
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -202,7 +298,7 @@ class _MenuPageState extends State<MenuPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => JobSavedPage(),
+                          builder: (context) => JobStatusPage(),
                         ),
                       );
                     },

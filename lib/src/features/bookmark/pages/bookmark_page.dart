@@ -13,7 +13,8 @@ class BookmarkPage extends StatefulWidget {
   State<BookmarkPage> createState() => _BookmarkPageState();
 }
 
-class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStateMixin {
+class _BookmarkPageState extends State<BookmarkPage>
+    with TickerProviderStateMixin {
   late final TabController _tabController;
 
   @override
@@ -78,7 +79,8 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (context) => EntreprisePage(),
+                                          builder: (context) =>
+                                              EntreprisePage(),
                                         ),
                                       );
                                     },
@@ -108,7 +110,8 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                     child: Image.network(
                                       "https://img.freepik.com/psd-gratuit/illustration-3d-personne-lunettes-soleil_23-2149436188.jpg?semt=ais_hybrid",
                                       fit: BoxFit.cover,
-                                      errorBuilder: (context, error, stackTrace) {
+                                      errorBuilder:
+                                          (context, error, stackTrace) {
                                         return Icon(Icons.image_not_supported);
                                       },
                                     ),
@@ -123,7 +126,8 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                   child: Column(
                                     children: [
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           RichText(
                                             text: TextSpan(
@@ -141,7 +145,8 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                                   style: TextStyle(
                                                     color: appBlack,
                                                     fontSize: 15.sp,
-                                                    fontWeight: FontWeight.normal,
+                                                    fontWeight:
+                                                        FontWeight.normal,
                                                   ),
                                                 ),
                                               ],
@@ -162,7 +167,8 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                                   style: TextStyle(
                                                     color: appBlack,
                                                     fontSize: 15.sp,
-                                                    fontWeight: FontWeight.normal,
+                                                    fontWeight:
+                                                        FontWeight.normal,
                                                   ),
                                                 ),
                                               ],
@@ -176,8 +182,10 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                           Container(
                                             padding: EdgeInsets.all(2.w),
                                             decoration: BoxDecoration(
-                                              color: appColor.withValues(alpha: .2),
-                                              borderRadius: BorderRadius.circular(3.w),
+                                              color: appColor.withValues(
+                                                  alpha: .2),
+                                              borderRadius:
+                                                  BorderRadius.circular(3.w),
                                             ),
                                             child: Text(
                                               "Full-Time",
@@ -192,8 +200,10 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                           Container(
                                             padding: EdgeInsets.all(2.w),
                                             decoration: BoxDecoration(
-                                              color: appColor.withValues(alpha: .2),
-                                              borderRadius: BorderRadius.circular(3.w),
+                                              color: appColor.withValues(
+                                                  alpha: .2),
+                                              borderRadius:
+                                                  BorderRadius.circular(3.w),
                                             ),
                                             child: Text(
                                               "Remote",
@@ -208,8 +218,10 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                           Container(
                                             padding: EdgeInsets.all(2.w),
                                             decoration: BoxDecoration(
-                                              color: appColor.withValues(alpha: .2),
-                                              borderRadius: BorderRadius.circular(3.w),
+                                              color: appColor.withValues(
+                                                  alpha: .2),
+                                              borderRadius:
+                                                  BorderRadius.circular(3.w),
                                             ),
                                             child: Text(
                                               "Director",
@@ -225,7 +237,8 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                       Gap(2.h),
                                       Divider(),
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           RichText(
                                             text: TextSpan(
@@ -238,11 +251,13 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                                   ),
                                                 ),
                                                 TextSpan(
-                                                  text: "Abidjan, Côte d'Ivoire",
+                                                  text:
+                                                      "Abidjan, Côte d'Ivoire",
                                                   style: TextStyle(
                                                     color: appBlack,
                                                     fontSize: 15.sp,
-                                                    fontWeight: FontWeight.normal,
+                                                    fontWeight:
+                                                        FontWeight.normal,
                                                   ),
                                                 ),
                                               ],
@@ -251,8 +266,10 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                           Container(
                                             padding: EdgeInsets.all(2.w),
                                             decoration: BoxDecoration(
-                                              color: Colors.blueAccent.withValues(alpha: .2),
-                                              borderRadius: BorderRadius.circular(3.w),
+                                              color: Colors.blueAccent
+                                                  .withValues(alpha: .2),
+                                              borderRadius:
+                                                  BorderRadius.circular(3.w),
                                             ),
                                             child: Text(
                                               "Envoyé",
@@ -304,7 +321,8 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (context) => EntreprisePage(),
+                                          builder: (context) =>
+                                              EntreprisePage(),
                                         ),
                                       );
                                     },
@@ -334,7 +352,8 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                     child: Image.network(
                                       "https://img.freepik.com/psd-gratuit/illustration-3d-personne-lunettes-soleil_23-2149436188.jpg?semt=ais_hybrid",
                                       fit: BoxFit.cover,
-                                      errorBuilder: (context, error, stackTrace) {
+                                      errorBuilder:
+                                          (context, error, stackTrace) {
                                         return Icon(Icons.image_not_supported);
                                       },
                                     ),
@@ -349,7 +368,8 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                   child: Column(
                                     children: [
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           RichText(
                                             text: TextSpan(
@@ -367,7 +387,8 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                                   style: TextStyle(
                                                     color: appBlack,
                                                     fontSize: 15.sp,
-                                                    fontWeight: FontWeight.normal,
+                                                    fontWeight:
+                                                        FontWeight.normal,
                                                   ),
                                                 ),
                                               ],
@@ -388,7 +409,8 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                                   style: TextStyle(
                                                     color: appBlack,
                                                     fontSize: 15.sp,
-                                                    fontWeight: FontWeight.normal,
+                                                    fontWeight:
+                                                        FontWeight.normal,
                                                   ),
                                                 ),
                                               ],
@@ -402,8 +424,10 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                           Container(
                                             padding: EdgeInsets.all(2.w),
                                             decoration: BoxDecoration(
-                                              color: appColor.withValues(alpha: .2),
-                                              borderRadius: BorderRadius.circular(3.w),
+                                              color: appColor.withValues(
+                                                  alpha: .2),
+                                              borderRadius:
+                                                  BorderRadius.circular(3.w),
                                             ),
                                             child: Text(
                                               "Full-Time",
@@ -418,8 +442,10 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                           Container(
                                             padding: EdgeInsets.all(2.w),
                                             decoration: BoxDecoration(
-                                              color: appColor.withValues(alpha: .2),
-                                              borderRadius: BorderRadius.circular(3.w),
+                                              color: appColor.withValues(
+                                                  alpha: .2),
+                                              borderRadius:
+                                                  BorderRadius.circular(3.w),
                                             ),
                                             child: Text(
                                               "Remote",
@@ -434,8 +460,10 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                           Container(
                                             padding: EdgeInsets.all(2.w),
                                             decoration: BoxDecoration(
-                                              color: appColor.withValues(alpha: .2),
-                                              borderRadius: BorderRadius.circular(3.w),
+                                              color: appColor.withValues(
+                                                  alpha: .2),
+                                              borderRadius:
+                                                  BorderRadius.circular(3.w),
                                             ),
                                             child: Text(
                                               "Director",
@@ -451,7 +479,8 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                       Gap(2.h),
                                       Divider(),
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           RichText(
                                             text: TextSpan(
@@ -464,11 +493,13 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                                   ),
                                                 ),
                                                 TextSpan(
-                                                  text: "Abidjan, Côte d'Ivoire",
+                                                  text:
+                                                      "Abidjan, Côte d'Ivoire",
                                                   style: TextStyle(
                                                     color: appBlack,
                                                     fontSize: 15.sp,
-                                                    fontWeight: FontWeight.normal,
+                                                    fontWeight:
+                                                        FontWeight.normal,
                                                   ),
                                                 ),
                                               ],
@@ -477,8 +508,10 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                           Container(
                                             padding: EdgeInsets.all(2.w),
                                             decoration: BoxDecoration(
-                                              color: Colors.green.withValues(alpha: .2),
-                                              borderRadius: BorderRadius.circular(3.w),
+                                              color: Colors.green
+                                                  .withValues(alpha: .2),
+                                              borderRadius:
+                                                  BorderRadius.circular(3.w),
                                             ),
                                             child: Text(
                                               "Accepté",
@@ -530,7 +563,8 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (context) => EntreprisePage(),
+                                          builder: (context) =>
+                                              EntreprisePage(),
                                         ),
                                       );
                                     },
@@ -560,7 +594,8 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                     child: Image.network(
                                       "https://img.freepik.com/psd-gratuit/illustration-3d-personne-lunettes-soleil_23-2149436188.jpg?semt=ais_hybrid",
                                       fit: BoxFit.cover,
-                                      errorBuilder: (context, error, stackTrace) {
+                                      errorBuilder:
+                                          (context, error, stackTrace) {
                                         return Icon(Icons.image_not_supported);
                                       },
                                     ),
@@ -575,7 +610,8 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                   child: Column(
                                     children: [
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           RichText(
                                             text: TextSpan(
@@ -593,7 +629,8 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                                   style: TextStyle(
                                                     color: appBlack,
                                                     fontSize: 15.sp,
-                                                    fontWeight: FontWeight.normal,
+                                                    fontWeight:
+                                                        FontWeight.normal,
                                                   ),
                                                 ),
                                               ],
@@ -614,7 +651,8 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                                   style: TextStyle(
                                                     color: appBlack,
                                                     fontSize: 15.sp,
-                                                    fontWeight: FontWeight.normal,
+                                                    fontWeight:
+                                                        FontWeight.normal,
                                                   ),
                                                 ),
                                               ],
@@ -628,8 +666,10 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                           Container(
                                             padding: EdgeInsets.all(2.w),
                                             decoration: BoxDecoration(
-                                              color: appColor.withValues(alpha: .2),
-                                              borderRadius: BorderRadius.circular(3.w),
+                                              color: appColor.withValues(
+                                                  alpha: .2),
+                                              borderRadius:
+                                                  BorderRadius.circular(3.w),
                                             ),
                                             child: Text(
                                               "Full-Time",
@@ -644,8 +684,10 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                           Container(
                                             padding: EdgeInsets.all(2.w),
                                             decoration: BoxDecoration(
-                                              color: appColor.withValues(alpha: .2),
-                                              borderRadius: BorderRadius.circular(3.w),
+                                              color: appColor.withValues(
+                                                  alpha: .2),
+                                              borderRadius:
+                                                  BorderRadius.circular(3.w),
                                             ),
                                             child: Text(
                                               "Remote",
@@ -660,8 +702,10 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                           Container(
                                             padding: EdgeInsets.all(2.w),
                                             decoration: BoxDecoration(
-                                              color: appColor.withValues(alpha: .2),
-                                              borderRadius: BorderRadius.circular(3.w),
+                                              color: appColor.withValues(
+                                                  alpha: .2),
+                                              borderRadius:
+                                                  BorderRadius.circular(3.w),
                                             ),
                                             child: Text(
                                               "Director",
@@ -677,7 +721,8 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                       Gap(2.h),
                                       Divider(),
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           RichText(
                                             text: TextSpan(
@@ -690,11 +735,13 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                                   ),
                                                 ),
                                                 TextSpan(
-                                                  text: "Abidjan, Côte d'Ivoire",
+                                                  text:
+                                                      "Abidjan, Côte d'Ivoire",
                                                   style: TextStyle(
                                                     color: appBlack,
                                                     fontSize: 15.sp,
-                                                    fontWeight: FontWeight.normal,
+                                                    fontWeight:
+                                                        FontWeight.normal,
                                                   ),
                                                 ),
                                               ],
@@ -703,8 +750,10 @@ class _BookmarkPageState extends State<BookmarkPage>     with TickerProviderStat
                                           Container(
                                             padding: EdgeInsets.all(2.w),
                                             decoration: BoxDecoration(
-                                              color: Colors.redAccent.withValues(alpha: .2),
-                                              borderRadius: BorderRadius.circular(3.w),
+                                              color: Colors.redAccent
+                                                  .withValues(alpha: .2),
+                                              borderRadius:
+                                                  BorderRadius.circular(3.w),
                                             ),
                                             child: Text(
                                               "Refusé",

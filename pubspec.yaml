@@ -26,6 +26,7 @@ dependencies:
   pinput: ^5.0.0
   syncfusion_flutter_gauges: ^27.2.4
   flutter_rating_bar: ^4.0.1
+  image_picker: ^1.1.2
 
 dev_dependencies:
   flutter_test:

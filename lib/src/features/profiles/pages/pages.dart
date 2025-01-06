@@ -1,1 +1,10 @@
 export 'profile_page.dart';
+export 'profile_details_page.dart';
+export 'basic_page.dart';
+export 'cv_page.dart';
+export 'education_page.dart';
+export 'emploi_page.dart';
+export 'info_page.dart';
+export 'projet_page.dart';
+export 'resume_page.dart';
+export 'skills_page.dart';

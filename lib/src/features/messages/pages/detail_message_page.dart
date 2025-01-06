@@ -47,14 +47,6 @@ class _DetailMessagePageState extends State<DetailMessagePage> {
       ),
       appBar: AppBar(
         title: ListTile(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => DetailMessagePage(),
-              ),
-            );
-          },
           title: Text(
             "Entreprise",
             style: TextStyle(

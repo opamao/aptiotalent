@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:gap/gap.dart';
@@ -7,7 +5,6 @@ import 'package:sizer/sizer.dart';
 
 import '../../../../constants/constants.dart';
 import '../../../themes/themes.dart';
-import '../../../widgets/widgets.dart';
 
 class EntreprisePage extends StatefulWidget {
   const EntreprisePage({super.key});

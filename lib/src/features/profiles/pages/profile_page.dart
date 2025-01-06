@@ -4,6 +4,7 @@ import 'package:sizer/sizer.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 import '../../../themes/themes.dart';
+import '../profiles.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -41,7 +42,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               axisLineStyle: AxisLineStyle(
                                 thickness: 0.1,
                                 cornerStyle: CornerStyle.bothCurve,
-                                color: appColor.withValues(alpha:.12),
+                                color: appColor.withValues(alpha: .12),
                                 thicknessUnit: GaugeSizeUnit.factor,
                               ),
                               pointers: <GaugePointer>[
@@ -108,8 +109,8 @@ class _ProfilePageState extends State<ProfilePage> {
                         Text(
                           "Développeur mobile",
                           style: TextStyle(
-                            color: appBlack,
-                            fontWeight: FontWeight.normal,
+                            color: appColor,
+                            fontWeight: FontWeight.bold,
                             fontSize: 13.sp,
                           ),
                         ),
@@ -118,7 +119,14 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                   Gap(2.w),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ProfileDetailsPage(),
+                        ),
+                      );
+                    },
                     icon: Icon(
                       Icons.edit_outlined,
                       color: appColor,
@@ -135,7 +143,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     Container(
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: appColor.withValues(alpha:.12),
+                          color: appColor.withValues(alpha: .12),
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(3.w),
@@ -175,7 +183,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     Container(
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: appColor.withValues(alpha:.12),
+                          color: appColor.withValues(alpha: .12),
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(3.w),
@@ -215,7 +223,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     Container(
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: appColor.withValues(alpha:.12),
+                          color: appColor.withValues(alpha: .12),
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(3.w),
@@ -255,7 +263,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     Container(
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: appColor.withValues(alpha:.12),
+                          color: appColor.withValues(alpha: .12),
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(3.w),
@@ -295,7 +303,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     Container(
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: appColor.withValues(alpha:.12),
+                          color: appColor.withValues(alpha: .12),
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(3.w),
@@ -335,7 +343,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     Container(
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: appColor.withValues(alpha:.12),
+                          color: appColor.withValues(alpha: .12),
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(3.w),
@@ -375,7 +383,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     Container(
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: appColor.withValues(alpha:.12),
+                          color: appColor.withValues(alpha: .12),
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(3.w),
@@ -415,7 +423,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     Container(
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: appColor.withValues(alpha:.12),
+                          color: appColor.withValues(alpha: .12),
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(3.w),

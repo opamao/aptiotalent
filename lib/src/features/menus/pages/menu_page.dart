@@ -253,21 +253,12 @@ class _MenuPageState extends State<MenuPage> {
                               Text(
                                 "Développeur mobile",
                                 style: TextStyle(
-                                  color: appBlack,
-                                  fontWeight: FontWeight.normal,
+                                  color: appColor,
+                                  fontWeight: FontWeight.bold,
                                   fontSize: 13.sp,
                                 ),
                               ),
                             ],
-                          ),
-                        ),
-                        Gap(2.w),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.edit_outlined,
-                            color: appColor,
-                            size: 18.sp,
                           ),
                         ),
                       ],

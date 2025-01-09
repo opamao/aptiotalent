@@ -50,6 +50,10 @@
     <string>Nous avons besoin d'accéder à la caméra pour prendre des photos.</string>
     <key>NSPhotoLibraryUsageDescription</key>
     <string>Nous avons besoin d'accéder à votre galerie pour sélectionner des photos.</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>Nous avons besoin de votre permission pour ajouter des fichiers à la bibliothèque.</string>
+    <key>NSDocumentsFolderUsageDescription</key>
+    <string>Nous avons besoin de votre permission pour accéder aux documents.</string>
 
 </dict>
 </plist>

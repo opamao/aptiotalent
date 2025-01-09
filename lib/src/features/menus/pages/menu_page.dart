@@ -368,7 +368,7 @@ class _MenuPageState extends State<MenuPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "AptioTalent",
+                        AppConstants.appName,
                         style: TextStyle(
                           fontSize: 15.sp,
                           color: appBlack,
@@ -376,7 +376,7 @@ class _MenuPageState extends State<MenuPage> {
                         ),
                       ),
                       Text(
-                        "Version 1.0.0",
+                        AppConstants.appVersion,
                         style: TextStyle(
                           fontSize: 14.sp,
                           color: appBlack,

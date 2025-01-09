@@ -2,6 +2,7 @@ class AppConstants {
   AppConstants._();
 
   static const appName = "AptioTalent";
+  static const appVersion = "Version 1.0.0";
 
   static const btnLogin = "Se connecter";
   static const btnNext = "Commençons";

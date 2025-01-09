@@ -27,6 +27,8 @@ dependencies:
   syncfusion_flutter_gauges: ^27.2.4
   flutter_rating_bar: ^4.0.1
   image_picker: ^1.1.2
+  file_picker: ^8.1.7
+  permission_handler: ^11.3.1
 
 dev_dependencies:
   flutter_test:

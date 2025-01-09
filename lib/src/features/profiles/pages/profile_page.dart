@@ -128,7 +128,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       );
                     },
                     icon: Icon(
-                      Icons.edit_outlined,
+                      Icons.remove_red_eye_outlined,
                       color: appColor,
                       size: 18.sp,
                     ),
@@ -162,7 +162,14 @@ class _ProfilePageState extends State<ProfilePage> {
                           color: appColor,
                         ),
                         trailing: TextButton.icon(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => BasicPage(),
+                              ),
+                            );
+                          },
                           icon: Icon(
                             Icons.add,
                             color: appColor,
@@ -202,7 +209,14 @@ class _ProfilePageState extends State<ProfilePage> {
                           color: appColor,
                         ),
                         trailing: TextButton.icon(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ResumePage(),
+                              ),
+                            );
+                          },
                           icon: Icon(
                             Icons.add,
                             color: appColor,
@@ -242,7 +256,14 @@ class _ProfilePageState extends State<ProfilePage> {
                           color: appColor,
                         ),
                         trailing: TextButton.icon(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => InfoPage(),
+                              ),
+                            );
+                          },
                           icon: Icon(
                             Icons.add,
                             color: appColor,
@@ -442,7 +463,14 @@ class _ProfilePageState extends State<ProfilePage> {
                           color: appColor,
                         ),
                         trailing: TextButton.icon(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => CvPage(),
+                              ),
+                            );
+                          },
                           icon: Icon(
                             Icons.add,
                             color: appColor,

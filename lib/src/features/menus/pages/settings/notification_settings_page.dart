@@ -32,20 +32,21 @@ class _NotificationSettingsPageState extends State<NotificationSettingsPage> {
         child: ListView(
           children: [
             ListTile(
-                title: const Text("Notifications générales"),
-                trailing: Transform.scale(
-                  scaleX: 0.7,
-                  scaleY: 0.7,
-                  child: Switch(
-                    thumbIcon: thumbIcon,
-                    value: light,
-                    onChanged: (bool value) {
-                      setState(() {
-                        light = value;
-                      });
-                    },
-                  ),
-                )),
+              title: const Text("Notifications générales"),
+              trailing: Transform.scale(
+                scaleX: 0.7,
+                scaleY: 0.7,
+                child: Switch(
+                  thumbIcon: thumbIcon,
+                  value: light,
+                  onChanged: (bool value) {
+                    setState(() {
+                      light = value;
+                    });
+                  },
+                ),
+              ),
+            ),
             ListTile(
               title: const Text("Notifier lorsqu'un emploi est disponible"),
               trailing: Transform.scale(

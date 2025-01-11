@@ -303,7 +303,14 @@ class _ProfilePageState extends State<ProfilePage> {
                           color: appColor,
                         ),
                         trailing: TextButton.icon(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => EmploiPage(),
+                              ),
+                            );
+                          },
                           icon: Icon(
                             Icons.add,
                             color: appColor,
@@ -343,7 +350,14 @@ class _ProfilePageState extends State<ProfilePage> {
                           color: appColor,
                         ),
                         trailing: TextButton.icon(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => EducationPage(),
+                              ),
+                            );
+                          },
                           icon: Icon(
                             Icons.add,
                             color: appColor,
@@ -383,7 +397,14 @@ class _ProfilePageState extends State<ProfilePage> {
                           color: appColor,
                         ),
                         trailing: TextButton.icon(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ProjetPage(),
+                              ),
+                            );
+                          },
                           icon: Icon(
                             Icons.add,
                             color: appColor,
@@ -423,7 +444,14 @@ class _ProfilePageState extends State<ProfilePage> {
                           color: appColor,
                         ),
                         trailing: TextButton.icon(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SkillsPage(),
+                              ),
+                            );
+                          },
                           icon: Icon(
                             Icons.add,
                             color: appColor,

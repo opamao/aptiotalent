@@ -18,6 +18,7 @@ class InputText extends StatefulWidget {
   final bool isClickable;
   final VoidCallback? onTap;
   final Color? borderColor;
+  final Function(String)? onSubmitted;
 
   const InputText({
     super.key,
@@ -35,6 +36,7 @@ class InputText extends StatefulWidget {
     this.colorFille,
     this.onTap,
     this.borderColor,
+    this.onSubmitted,
   });
 
   @override
@@ -80,6 +82,7 @@ class _InputTextState extends State<InputText> {
         controller: widget.controller,
         obscureText: widget.obscureText,
         textInputAction: TextInputAction.done,
+        onFieldSubmitted: widget.onSubmitted,
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(3.w),

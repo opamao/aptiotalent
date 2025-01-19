@@ -1,15 +1,21 @@
-import 'package:aptiotalent/constants/constants.dart';
-import 'package:aptiotalent/src/features/splash/spalsh.dart';
-import 'package:aptiotalent/src/themes/themes.dart';
-import 'package:aptiotalent/utils/utils.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
+
+import 'core/constants/constants.dart';
+import 'core/themes/themes.dart';
+import 'core/utils/utils.dart';
+import 'features/splash/spalsh.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SharedPreferencesHelper().init();
-  runApp(const MyApp());
+  runApp(
+    ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

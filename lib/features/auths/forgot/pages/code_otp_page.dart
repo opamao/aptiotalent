@@ -81,8 +81,6 @@ class _CodeOtpPageState extends State<CodeOtpPage> {
                     heroTag: 'back',
                     shape: CircleBorder(),
                     onPressed: () => Navigator.pop(context),
-                    backgroundColor: appColor.withValues(alpha:.08),
-                    foregroundColor: appColor.withValues(alpha:.08),
                     child: Icon(
                       Icons.arrow_back_outlined,
                       color: appColor,

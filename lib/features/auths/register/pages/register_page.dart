@@ -1,4 +1,6 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:sizer/sizer.dart';
@@ -6,16 +8,17 @@ import 'package:sizer/sizer.dart';
 import '../../../../core/constants/constants.dart';
 import '../../../../core/themes/themes.dart';
 import '../../../../core/widgets/widgets.dart';
+import '../../login/state/auth_provider.dart';
 import '../register.dart';
 
-class RegisterPage extends StatefulWidget {
+class RegisterPage extends ConsumerStatefulWidget {
   const RegisterPage({super.key});
 
   @override
-  State<RegisterPage> createState() => _RegisterPageState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _RegisterPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _RegisterPageState extends ConsumerState<RegisterPage> {
   final _formKey = GlobalKey<FormState>();
   bool _obscure = true;
 
@@ -48,16 +51,12 @@ class _RegisterPageState extends State<RegisterPage> {
   String initialCountry = 'CI';
   PhoneNumber number = PhoneNumber(isoCode: 'CI');
 
-  final _snackBar = const SnackBar(
-    content: Text("Tous les champs sont obligatoires"),
-    backgroundColor: Colors.red,
-  );
-
   late bool _isChecked = false;
   String? _selectedGender;
 
   @override
   Widget build(BuildContext context) {
+    final authState = ref.watch(authProvider);
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -73,8 +72,6 @@ class _RegisterPageState extends State<RegisterPage> {
                     heroTag: 'backOne',
                     shape: CircleBorder(),
                     onPressed: () => Navigator.pop(context),
-                    backgroundColor: appColor.withValues(alpha:.08),
-                    foregroundColor: appColor.withValues(alpha:.08),
                     child: Icon(
                       Icons.arrow_back_outlined,
                       color: appColor,
@@ -188,7 +185,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   Container(
                     padding: EdgeInsets.only(left: 4.w),
                     decoration: BoxDecoration(
-                      color: appColor.withValues(alpha:.08),
+                      color: appColor.withValues(alpha: .08),
                       borderRadius: BorderRadius.circular(3.w),
                       border: Border.all(
                         color: _isFocused ? appColor : Colors.transparent,
@@ -264,14 +261,42 @@ class _RegisterPageState extends State<RegisterPage> {
                     AppConstants.btnRegister,
                     onPressed: () async {
                       if (_formKey.currentState!.validate()) {
+                        await ref.read(authProvider.notifier).signUp(
+                              _selectedGender!,
+                              _selectedGender!,
+                              name.text,
+                              lastName.text,
+                              email.text,
+                              phoneIndicator,
+                              '',
+                              0,
+                              0,
+                              0,
+                              password.text,
+                            );
+
+                        if (ref.read(authProvider).isAuthenticated) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => NextOnePage(),
+                            ),
+                          );
+                        }
                       } else {
-                        ScaffoldMessenger.of(context).showSnackBar(_snackBar);
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => NextOnePage(),
+                        final snackBar = SnackBar(
+                          elevation: 0,
+                          behavior: SnackBarBehavior.floating,
+                          backgroundColor: Colors.transparent,
+                          content: AwesomeSnackbarContent(
+                            title: "Oups!",
+                            message: "Tous les champs sont obligatoires",
+                            contentType: ContentType.failure,
                           ),
                         );
+                        ScaffoldMessenger.of(context)
+                          ..hideCurrentSnackBar()
+                          ..showSnackBar(snackBar);
                       }
                     },
                   ),
@@ -289,8 +314,9 @@ class _RegisterPageState extends State<RegisterPage> {
       child: Container(
         decoration: BoxDecoration(
           border: Border.all(
-            color:
-                _selectedGender == value ? appColor : appColor.withValues(alpha:.2),
+            color: _selectedGender == value
+                ? appColor
+                : appColor.withValues(alpha: .2),
             width: 1.5,
           ),
           borderRadius: BorderRadius.circular(3.w),
@@ -312,7 +338,11 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
           ),
           contentPadding: EdgeInsets.zero,
-          activeColor: appColor,visualDensity: VisualDensity(horizontal: -4.0, vertical: -4.0),
+          activeColor: appColor,
+          visualDensity: VisualDensity(
+            horizontal: -4.0,
+            vertical: -4.0,
+          ),
         ),
       ),
     );

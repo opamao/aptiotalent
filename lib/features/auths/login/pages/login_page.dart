@@ -1,4 +1,5 @@
 import 'package:aptiotalent/features/auths/login/state/auth_provider.dart';
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
@@ -25,11 +26,6 @@ class _LoginPageState extends ConsumerState<LoginPage> {
   var login = TextEditingController();
   var password = TextEditingController();
 
-  final _snackBar = const SnackBar(
-    content: Text("Tous les champs sont obligatoires"),
-    backgroundColor: Colors.red,
-  );
-
   @override
   Widget build(BuildContext context) {
     final authState = ref.watch(authProvider);
@@ -48,8 +44,6 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                     heroTag: 'back',
                     shape: CircleBorder(),
                     onPressed: () => Navigator.pop(context),
-                    backgroundColor: appColor.withValues(alpha: .08),
-                    foregroundColor: appColor.withValues(alpha: .08),
                     child: Icon(
                       Icons.arrow_back_outlined,
                       color: appColor,
@@ -148,17 +142,32 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                     AppConstants.btnLogin,
                     onPressed: () async {
                       if (_formKey.currentState!.validate()) {
-                        await ref
-                            .read(authProvider.notifier)
-                            .login(login.text, password.text);
-
+                        print("commence");
+                        await ref.read(authProvider.notifier).login(
+                              login.text,
+                              password.text,
+                              context,
+                            );
+print("fin");
                         if (ref.read(authProvider).isAuthenticated) {
                           Navigator.of(context).pushReplacement(
                             MaterialPageRoute(builder: (context) => MenuPage()),
                           );
                         }
                       } else {
-                        ScaffoldMessenger.of(context).showSnackBar(_snackBar);
+                        final snackBar = SnackBar(
+                          elevation: 0,
+                          behavior: SnackBarBehavior.floating,
+                          backgroundColor: Colors.transparent,
+                          content: AwesomeSnackbarContent(
+                            title: "Oups!",
+                            message: "Tous les champs sont obligatoires",
+                            contentType: ContentType.failure,
+                          ),
+                        );
+                        ScaffoldMessenger.of(context)
+                          ..hideCurrentSnackBar()
+                          ..showSnackBar(snackBar);
                       }
                     },
                   ),

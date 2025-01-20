@@ -1,19 +1,23 @@
 class ApiUrls {
   ApiUrls._();
 
-  //change base url
+  // Change base URL
   static const bool change = false;
 
-  // Base Url
-  static const baseUrlProd = "http://aptiotalent.sodalite-consulting.com/api";
-  static const baseUrlTest = "http://192.168.1.4:2704/api";
+  // Base URL Candidate
+  static const baseUrlProdCandidate = "http://candidat.aptiotalent.com/api";
+  static const baseUrlTestCandidate = "http://talent-user.sodalite-consulting.com/api";
+  // Base URL Admin
+  static const baseUrlProdAdmin = "http://recruteur.aptiotalent.com/api";
+  static const baseUrlTestAdmin = "http://talent-admin.sodalite-consulting.com/api";
 
   // Pour obtenir la bonne base URL
-  static String get baseUrl => change ? baseUrlProd : baseUrlTest;
+  static String get baseUrlCandidate => change ? baseUrlProdCandidate : baseUrlTestCandidate;
+  static String get baseUrlAdmin => change ? baseUrlProdAdmin : baseUrlTestAdmin;
 
-  // Authentification
-  static String get postLoginUrl => "$baseUrl/login";
-  static String get postRegisterUrl => "$baseUrl/register";
-  static String get postRetryLoginUrl => "$baseUrl/loginretry";
+  // Authentication
+  static String get postLoginUrl => "$baseUrlCandidate/login";
+  static String get postRegisterUrl => "$baseUrlCandidate/register";
+  static String get postRetryLoginUrl => "$baseUrlCandidate/loginretry";
 
 }
